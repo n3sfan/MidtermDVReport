@@ -1,0 +1,44 @@
+\section{Giới thiệu Dữ liệu}
+
+\subsection{Nguồn gốc dữ liệu}
+Dữ liệu được thu thập từ sàn giao dịch tiền điện tử \textbf{Binance} thông qua nền tảng \textbf{Binance Vision} \cite{binancevision_futures_data}. Đây là nguồn dữ liệu chính thống cho phép truy cập vào dữ liệu lịch sử của thị trường tương lai (Futures) với độ chi tiết cao.
+
+\textbf{Link tải dữ liệu:} \url{https://data.binance.vision/?prefix=data/futures/cm/daily/}
+
+\subsection{Mô tả sơ lược}
+Bộ dữ liệu tập trung vào các đồng tiền điện tử phổ biến như Ethereum (ETH), Dogecoin (DOGE), và Solana (SOL) trong giai đoạn quý 1 năm 2024. Dữ liệu bao gồm các thành phần chính sau:
+
+\begin{itemize}
+    \item \textbf{Dữ liệu nến giá (Klines):} Cung cấp thông tin OHLCV (Open, High, Low, Close, Volume) theo từng khung thời gian.
+    \item \textbf{Dữ liệu lệnh thanh lý (Liquidations):} Thông tin chi tiết về các vị thế bị thanh lý trên thị trường.
+    \item \textbf{Dữ liệu chỉ số phái sinh (Metrics):} Bao gồm tổng hợp đồng mở (Open Interest) và tỷ lệ Long/Short.
+\end{itemize}
+
+\subsection{Chi tiết các trường dữ liệu}
+
+\subsubsection{Dữ liệu nến giá (Kline)}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+open\_time & Long & Thời gian mở nến (Unix timestamp). \\ \hline
+open, high, low, close & Float & Các mức giá trong phiên. \\ \hline
+volume & Float & Khối lượng giao dịch. \\ \hline
+close\_time & Long & Thời gian đóng nến. \\ \hline
+base\_asset\_volume & Float & Khối lượng tính theo đồng coin cơ sở. \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Dữ liệu lệnh thanh lý}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\ \hline
+time & Long & Thời gian xảy ra thanh lý. \\ \hline
+side & String & Phía thanh lý (BUY/SELL). \\ \hline
+price & Float & Giá tại thời điểm thanh lý. \\ \hline
+original\_quantity & Float & Số lượng vị thế bị thanh lý. \\ \hline
+\end{tabular}
+\end{table}
