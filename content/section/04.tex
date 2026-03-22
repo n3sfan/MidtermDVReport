@@ -177,7 +177,7 @@ Dashboard áp dụng nguyên tắc "Tổng quan trước, phóng to và lọc, s
 
 \subsubsection{Visual encoding và nhận thức}
 \begin{itemize}
-    \item \textbf{Độ chính xác:} Các biến định lượng quan trọng như giá và khối lượng được mã hóa bằng \textit{Vị trí trên thang đo chung}.
+    \item \textbf{Độ chính xác:} Các biến định lượng quan trọng như giá và khối lượng được mã hóa bằng \textit{Vị trí}.
     \item \textbf{Bộ lọc:} Các bộ lọc được đặt sát biểu đồ tương ứng và sử dụng chung một bộ màu Bull/Bear cho toàn bộ Dashboard. Điều này giúp giảm đáng kể "Tải trọng nhận thức", giúp trader ra quyết định nhanh trong môi trường biến động cao.
     \item \textbf{Sự phân bậc thị giác:} Sử dụng kích thước biểu đồ lớn hơn cho các thành phần quan trọng (Nến giá) và màu sắc rực rỡ (accent) cho các tín hiệu thanh lý, OI.
 \end{itemize}
@@ -186,6 +186,17 @@ Dashboard áp dụng nguyên tắc "Tổng quan trước, phóng to và lọc, s
 \begin{itemize}
     \item \textbf{Màu sắc:} Thiết kế sử dụng nền tối (\textit{Dark Mode}) với các màu neon tương phản cao, giảm chói mắt.
     \item \textbf{Tương tác:} Đồng bộ \textit{cross-hair} và \textit{tooltip} cung cấp dữ liệu chi tiết tại từng điểm mà không làm rối giao diện chung
+\end{itemize}
+
+\subsubsection{Nhận diện thị trường và tín hiệu giao dịch}
+\begin{itemize}
+    \item \textbf{Xác định trạng thái:} Kết hợp Giá và Open Interest (OI) giúp phân biệt xu hướng bền vững (có nhiều hợp đồng) và sự cạn kiệt. Giá tăng kèm OI tăng cho thấy lực mua mạnh, ngược lại giá tăng nhưng OI giảm cảnh báo đảo chiều. 
+    
+        Ví dụ: với ETH ngày 25/2 20h - 26/2 8h thấy OI tăng và giá cũng tăng, có thể vào lệnh Long ngay 26/2 8h giá vào \$3114.4. Thoát lệnh khi OI tăng cao hơn so với lân cận - lúc 27/2 4h giá \$3220.25. Như vậy trader ăn được chênh lệch \$106.15.
+    \item \textbf{Tín hiệu vào/ra (Entry/Exit):} Trader tìm điểm vào tại vùng POC (Hồ sơ khối lượng) hoặc khi các coin có tương quan (lúc 1 coin tăng thì vào lệnh 2 coin, thì coin kia cũng tăng). 
+
+        Ví dụ: 
+        - 25 - 26/2 có POC là \$3043, kết hợp việc thấy giá coin tăng trong 1 tuần trước đó. Nếu ta vào lệnh Long ngay tại POC, sau đó tại 27/2 4h thoát sẽ là \$3220.5. Như vậy ăn được chênh lệch \$177.5. Kết hợp tương quan giá trong 1 tuần trước 25/2 ở mức rất cao (> 0.7) cho thấy các coin tăng bền 1 tuần.
 \end{itemize}
 
 \subsubsection{Kết luận}
