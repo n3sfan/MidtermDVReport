@@ -1,4 +1,4 @@
-\section{Thiết kế \& Kết quả (The "How")}
+\section{Thiết kế và kết quả}
 
 \subsection{Screenshot toàn bộ Dashboard}
 \begin{figure}[H]
@@ -9,43 +9,158 @@
 
 \subsection{Trình bày chi tiết \& Giải thích thiết kế}
 
-\subsubsection{Biểu đồ Nến \& Khối lượng kết hợp Đường Trung bình (MA)}
+\subsubsection{Biểu đồ nến SOL/USD}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{img/sol_candlestick.png}
-    \caption{Biểu đồ nến SOL/USD cùng Khối lượng giao dịch và Đường Trung bình 7 \& 14}
+    \caption{Biểu đồ nến SOL/USD cùng Khối lượng giao dịch và Đường Trung bình 7 \& 25}
 \end{figure}
 
-\textbf{Giải thích thiết kế (Marks \& Channels):}
-Dựa trên lý thuyết Trực quan hóa dữ liệu, biểu đồ này sử dụng các Marks (Dấu hiệu) và Channels (Kênh hiển thị) như sau để mã hóa thông tin:
+\textbf{Giải thích thiết kế:}
+Dựa trên lý thuyết trực quan hóa dữ liệu, biểu đồ này sử dụng các dấu hiệu và kênh hiển thị như sau để mã hóa thông tin:
 
 \begin{itemize}
-    \item \textbf{Thành phần Nến giá (Candlestick):}
+    \item \textbf{Thành phần nến giá:}
     \begin{itemize}
-        \item \textbf{Mark:} Area/Shape (Hình chữ nhật thân nến - Open/Close) và Line (Đường thẳng bóng nến - High/Low).
-        \item \textbf{Channel - Vị trí (Position):} Trục X là thời gian, Trục Y là mức giá.
-        \item \textbf{Channel - Chiều dài (Size/Length):} Chiều dài thân nến thể hiện độ chênh lệch giữa giá mở cửa và đóng cửa, trong khi thân bóng nến biểu thị biên độ biến động giá trong phiên.
-        \item \textbf{Channel - Màu sắc (Color):} Dùng để mã hóa tính chất thay đổi (Kênh Hue). Màu xanh (Identity/Category: Tăng) cho nến đóng cao hơn giá mở, và màu đỏ/hồng cho nến đóng thấp hơn giá mở.
+        \item \textbf{Dấu hiệu:} Hình chữ nhật thân nến - Giá mở/Giá đóng và Đường thẳng bóng nến - Cao nhất/Thấp nhất.
+        \item \textbf{Kênh - Vị trí:} Trục X là thời gian, Trục Y là mức giá.
+        \item \textbf{Kênh - Kích thước:} Chiều dài thân nến thể hiện độ chênh lệch giữa giá mở cửa và đóng cửa, trong khi thân bóng nến biểu thị biên độ biến động giá trong phiên.
+        \item \textbf{Kênh - Màu sắc:} Dùng để mã hóa tính chất thay đổi. Màu xanh cho nến đóng cao hơn giá mở, và màu đỏ/hồng cho nến đóng thấp hơn giá mở.
     \end{itemize}
     
-    \item \textbf{Thành phần Đường Trung bình động (Moving Average - MA7, MA14):}
+    \item \textbf{Thành phần đường trung bình động (MA7, MA25):}
     \begin{itemize}
-        \item \textbf{Mark:} Line (Đường cong liên tục).
-        \item \textbf{Channel - Vị trí (Position):} Trục Y thể hiện mức giá trung bình ứng trên trục X thời gian.
-        \item \textbf{Channel - Màu sắc (Color):} Sử dụng màu Cam cho MA(7) và màu Tím cho MA(14). Mục đích cũng là kênh Hue dùng để Phân biệt (Identify) hai chuỗi dữ liệu đường trung bình khác nhau.
+        \item \textbf{Dấu hiệu:} Đường cong liên tục.
+        \item \textbf{Kênh - Vị trí:} Trục Y thể hiện mức giá trung bình ứng trên trục X thời gian.
+        \item \textbf{Kênh - Màu sắc:} Sử dụng màu cam cho MA(7) và màu tím cho MA(25). Mục đích là để phân biệt hai chuỗi dữ liệu đường trung bình khác nhau.
     \end{itemize}
 
-    \item \textbf{Thành phần Khối lượng giao dịch (Volume Bar Chart dưới cùng):}
+    \item \textbf{Thành phần khối lượng giao dịch:}
     \begin{itemize}
-        \item \textbf{Mark:} Line/Bar (Cột dọc hẹp).
-        \item \textbf{Channel - Vị trí (Position):} Đồng bộ trục X thời gian với nến giá phía trên, nhưng trục Y được đặt độc lập thấp bên dưới với thang đo riêng về khối lượng.
-        \item \textbf{Channel - Chiều dài (Size/Length):} Chiều cao của cột trên trục Y thể hiện độ lớn định lượng Khối lượng giao dịch.
-        \item \textbf{Channel - Màu sắc (Color):} Đồng bộ sắc độ với màu của nến trên cùng khung giờ (xanh hoặc đỏ) để người xem có thể đánh giá nhanh tương quan khối lượng với việc giá tăng/giảm.
+        \item \textbf{Dấu hiệu:} Cột dọc hẹp.
+        \item \textbf{Kênh - Vị trí:} Đồng bộ trục X thời gian với nến giá phía trên, nhưng trục Y được đặt độc lập thấp bên dưới với thang đo riêng về khối lượng.
+        \item \textbf{Kênh - Kích thước:} Chiều cao của cột trên trục Y thể hiện độ lớn định lượng khối lượng giao dịch.
+        \item \textbf{Kênh - Màu sắc:} Đồng bộ sắc độ với màu của nến trên cùng khung giờ (xanh hoặc đỏ) để người xem có thể đánh giá nhanh tương quan khối lượng với việc giá tăng/giảm.
     \end{itemize}
 \end{itemize}
 
-\textbf{Nhận xét (Insights):}
+\textbf{Nhận xét:}
+Sự kết hợp giữa Nến giá, MA và Volume giúp người dùng xác định không chỉ xu hướng giá mà còn cả sức mạnh của xu hướng đó thông qua khối lượng đi kèm.
+
+\subsubsection{Sự đồng bộ giữa giá và Open Interest}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/eth_price_oi.png}
+    \caption{Phân tích mối tương quan giữa Giá và Open Interest (ETH)}
+\end{figure}
+
+\textbf{Giải thích thiết kế:}
+Biểu đồ này giải quyết nhiệm vụ phân tích sự cam kết của thị trường đối với một xu hướng giá.
 \begin{itemize}
-    \item Xu hướng giá chung từ khoảng 24/Jan/2024 đến 30/Jan/2024 thể hiện đà phục hồi và tăng trưởng của đồng SOL. Đường MA(7) màu cam có xu hướng vượt lên trên đường MA(14) màu tím, xác nhận cấu trúc giao cắt đồng thuận với đà tăng giá ngắn hạn.
-    \item Tại các cây nến đỏ sâu trước ngày 24/Jan, cột volume vượt trội cho thấy áp lực bán rát cao. Tuy nhiên, sau vùng giá tạo đáy (ngày 24/Jan), áp lực bán đã suy giảm và lực mua chiếm ưu thế thể hiện qua sự xuất hiện liên tục của các nến xanh thân lớn nhịp nhàng với đà dốc lên của đường MA ngắn hạn.
+    \item \textbf{Mã hóa thị giác:} Sử dụng hai trục Y để hiển thị đồng thời hai biến định lượng có thang đo khác nhau trên cùng một trục thời gian.
+    \item \textbf{Kênh - Vị trí:} Trục X là thời gian, giúp theo dõi sự thay đổi liên tục.
+    \item \textbf{Kênh - Màu sắc:} Sử dụng màu vàng cho đường giá để tạo sự tương phản mạnh trên nền tối, và màu xanh dương/tím cho vùng Open Interest.
+    \item \textbf{Nhận thức:} Việc sử dụng biểu đồ vùng cho Open Interest giúp người xem cảm nhận được "độ dày" và sự tích lũy của vị thế trên thị trường, trong khi biểu đồ đường cho giá giúp tập trung vào sự biến động chính xác.
+\end{itemize}
+
+\subsubsection{Phân tích thanh lý}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/eth_liq.png}
+    \caption{Biểu đồ Thanh lý Long/Short và Mất cân bằng thanh lý}
+\end{figure}
+
+\textbf{Giải thích thiết kế:}
+\begin{itemize}
+    \item \textbf{Dữ liệu:} Giá trị thanh lý và phía thanh lý.
+    \item \textbf{Bố cục:} Sử dụng bố cục đa tầng với hai biểu đồ xếp chồng. Biểu đồ trên hiển thị tỷ lệ mất cân bằng dưới dạng đường nét đứt, biểu đồ dưới hiển thị giá trị thanh lý tuyệt đối.
+\item \textbf{Lý thuyết màu sắc:} Tuân thủ quy ước chuẩn của ngành tài chính: Màu xanh (\#00e5cc) cho thanh lý vị thế Long và màu đỏ (\#ff3d71) cho thanh lý vị thế Short. Điều này giúp tận dụng nhận thức thị giác ngay lập tức.
+    \item \textbf{Tương tác:} Đồng bộ hóa con trỏ chuỗi giữa các biểu đồ giúp so sánh chính xác thời điểm xảy ra thanh lý lớn với biến động giá tương ứng.
+\end{itemize}
+
+\subsubsection{Hồ sơ khối lượng}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/eth_vol_profile.png}
+    \caption{Phân bổ khối lượng giao dịch theo mức giá (ETH)}
+\end{figure}
+
+\textbf{Giải thích thiết kế:}
+\begin{itemize}
+    \item \textbf{Dữ liệu:} Khối lượng tích lũy cho từng khoảng giá.
+    \item \textbf{Bố cục:} Biểu đồ thanh nằm ngang. Việc xoay ngang biểu đồ này có mục đích thực tiễn: để trục Y khớp với trục Y của biểu đồ nến, giúp người dùng đối chiếu trực quan các vùng tích lũy khối lượng với các mức giá hỗ trợ/kháng cự.
+    \item \textbf{Mã hóa thị giác - Vùng giá trị:} Sử dụng màu sắc để phân biệt vùng chiếm 70\% khối lượng (màu tím đậm) và vùng ngoài (màu xám nhạt). Đây là kỹ thuật sử dụng màu sắc để phân loại dữ liệu quan trọng.
+    \item \textbf{Dấu hiệu - Điểm kiểm soát:} Một đường kẻ nổi bật đánh dấu mức giá có khối lượng giao dịch lớn nhất, giúp xác định tâm điểm của thị trường.
+\end{itemize}
+
+\subsubsection{Ma trận tương quan}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/coin_corr.png}
+    \caption{Ma trận tương quan biến động giá giữa các đồng tiền điện tử}
+\end{figure}
+
+\textbf{Biện luận thiết kế:}
+\begin{itemize}
+    \item \textbf{Nhiệm vụ:} So sánh sự tương quan giữa nhiều cặp tài sản cùng lúc để hỗ trợ quản trị rủi ro danh mục.
+    \item \textbf{Ánh xạ thị giác:} Sử dụng ma trận nhiệt. Trục X và Y đều là danh sách các đồng coin.
+    \item \textbf{Kênh - Màu sắc:} Cường độ màu sắc mã hóa giá trị hệ số tương quan từ -1 đến 1. Màu xanh đậm thể hiện tương quan thuận mạnh, màu đỏ thể hiện tương quan nghịch.
+    \item \textbf{Nguyên lý nhận thức:} Việc hiển thị trực tiếp con số trên từng ô giúp người dùng kết hợp giữa nhận diện nhanh qua màu sắc và đọc thông tin chính xác khi cần.
+\end{itemize}
+
+\subsubsection{Tương quan động}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/eth_rolling_corr.png}
+    \caption{Biến động hệ số tương quan theo thời gian}
+\end{figure}
+
+\textbf{Giải thích thiết kế:}
+Khác với ma trận tương quan tĩnh, biểu đồ này theo dõi sự thay đổi của mối quan hệ giữa các tài sản theo thời gian.
+\begin{itemize}
+    \item \textbf{Dấu hiệu:} Sử dụng nhiều đường biểu diễn trên cùng một biểu đồ.
+    \item \textbf{Kênh - Màu sắc:} Mỗi đường có một màu riêng để phân biệt các cặp coin khác nhau.
+    \item \textbf{Nguyên lý nhận thức:} Sử dụng đường tham chiếu (Reference Line) tại mức 0 giúp người dùng nhanh chóng xác định trạng thái tương quan là thuận hay nghịch.
+\end{itemize}
+
+\subsubsection{So sánh Open Interest giữa các tài sản}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/eth_oi_eth_sol.png}
+    \caption{So sánh Open Interest giữa ETH và SOL}
+\end{figure}
+
+\textbf{Giải thích thiết kế:}
+\begin{itemize}
+    \item \textbf{Nhiệm vụ:} So sánh tương đối sự tăng trưởng của dòng tiền giữa hai hoặc nhiều tài sản khác nhau.
+    \item \textbf{Biến đổi dữ liệu:} Thay vì sử dụng giá trị tuyệt đối, dữ liệu được chuyển đổi sang \% thay đổi tính từ thời điểm bắt đầu. Điều này giúp loại bỏ sự chênh lệch về vốn hóa để tập trung vào tốc độ tăng trưởng.
+    \item \textbf{Dấu hiệu:} Biểu đồ vùng chồng lấp với độ trong suốt.
+    \item \textbf{Màu sắc:} Màu định danh cho từng coin.
+\end{itemize}
+
+\subsubsection{Tương quan Open Interest và khối lượng theo tuần}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/eth_oi_vol_corr.png}
+    \caption{Phân tích tương quan giữa Khối lượng giao dịch và OI theo tuần}
+\end{figure}
+
+\textbf{Giải thích thiết kế:}
+\begin{itemize}
+    \item \textbf{Trực quan hóa kết hợp:} Kết hợp giữa biểu đồ và bảng số liệu.
+    \item \textbf{Lý do:} Bảng giúp cung cấp chi tiết định lượng chính xác, trong khi biểu đồ giúp nhận diện xu hướng nhanh.
+    \item \textbf{Ánh xạ ngữ nghĩa:} Trong bảng, sử dụng các ký hiệu màu sắc (Xanh, Đỏ, Trắng) cho các con số \% để người dùng không cần đọc số vẫn hiểu được trạng thái tăng/giảm.
+\end{itemize}
+
+\subsection{Bố cục và nguyên tắc thị giác tổng quát}
+Dashboard được thiết kế theo nguyên tắc: tổng quan trước, phóng to hơn và lọc thông tin, sau đó xem chi tiết cần quan tâm.
+
+\begin{itemize}
+    \item \textbf{Bố cục phân tầng:} Các chỉ số tổng hợp quan trọng nhất được đặt ở trên cùng, các biểu đồ nến và thanh lý (chi tiết nhất) được đặt ở trung tâm, và các biểu đồ phân tích tương quan/thống kê ở phía dưới.
+    \item \textbf{Nguyên tắc Gestalt:}
+    \begin{itemize}
+        \item \textbf{Gần gũi:} Các bộ lọc (Selectbox, Date input) được đặt ngay sát biểu đồ tương ứng để người dùng hiểu được phạm vi tác động.
+        \item \textbf{Đồng nhất:} Sử dụng bộ màu Bull/Bear thống nhất trên toàn bộ Dashboard giúp giảm tải nhận thức.
+    \end{itemize}
+    \item \textbf{Lý thuyết màu sắc:} Sử dụng nền tối giúp các màu sắc neon (xanh, đỏ, cam) của biểu đồ nổi bật hơn (tương phản cao), giảm mỏi mắt khi quan sát dữ liệu trong thời gian dài.
 \end{itemize}
