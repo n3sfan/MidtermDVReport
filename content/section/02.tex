@@ -16,7 +16,7 @@ Bộ dữ liệu tập trung vào các đồng tiền điện tử phổ biến 
 
 \subsection{Chi tiết các trường dữ liệu}
 
-\subsubsection{Dữ liệu nến giá (Kline)}
+\subsubsection{Dữ liệu nến giá (Kline) \cite{binance_klines}}
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|}
@@ -30,7 +30,7 @@ base\_asset\_volume & Float & Khối lượng tính theo đồng coin cơ sở. 
 \end{tabular}
 \end{table}
 
-\subsubsection{Dữ liệu lệnh thanh lý}
+\subsubsection{Dữ liệu lệnh thanh lý \cite{binance_liquidation}}
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|}
@@ -42,6 +42,29 @@ price & Float & Giá tại thời điểm thanh lý. \\ \hline
 original\_quantity & Float & Số lượng vị thế bị thanh lý. \\ \hline
 \end{tabular}
 \end{table}
+
+
+\subsection{Dữ liệu các chỉ số khác \cite{binance_metrics}}
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.25}
+\centering
+\begin{tabular}{|l|l|p{8cm}|}
+\hline
+\textbf{Tên trường} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả chi tiết} \\ \hline
+create\_time & DateTime & Thời gian ghi nhận dữ liệu (ví dụ: 2026-01-26 00:00:00). \\ \hline
+symbol & String & Mã hợp đồng phái sinh (ví dụ: ETHUSD\_PERP). \\ \hline
+sum\_open\_interest & Float & Tổng hợp đồng mở tính theo số lượng hợp đồng. \\ \hline
+sum\_taker\_long\_short\_vol\_ratio & Float & Tỷ lệ khối lượng giao dịch Taker phe mua (Long) so với phe bán (Short). \\ \hline
+\end{tabular}
+\caption{Mô tả các trường dữ liệu chỉ số khác của phái sinh Binance}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{img/eth_price_oi.png}
+\caption{Biểu đồ giá, hợp đồng mở, khối lượng giao dịch}
+\end{figure}
 
 \subsection{Phân tích bài toán}
 - Ngữ cảnh dữ liệu: dữ liệu nến, thanh lý, các chỉ số khác (OI, ...) của thị trường các coin crypto trên Binance
