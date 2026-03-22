@@ -164,3 +164,29 @@ Dashboard được thiết kế theo nguyên tắc: tổng quan trước, phóng
     \end{itemize}
     \item \textbf{Lý thuyết màu sắc:} Sử dụng nền tối giúp các màu sắc neon (xanh, đỏ, cam) của biểu đồ nổi bật hơn (tương phản cao), giảm mỏi mắt khi quan sát dữ liệu trong thời gian dài.
 \end{itemize}
+
+\subsection{Tổng kết và Biện luận thiết kế tổng thể}
+
+\subsubsection{Bố cục}
+Dashboard áp dụng nguyên tắc "Tổng quan trước, phóng to và lọc, sau đó xem chi tiết"
+\begin{itemize}
+    \item \textbf{Tầng 1:} Biểu đồ Giá/OI và So sánh OI cung cấp cái nhìn vĩ mô về dòng tiền và xu hướng giá dài hạn.
+    \item \textbf{Tầng 2:} Candlestick kết hợp Hồ sơ khối lượng và phân tích thanh lý giúp trader hiểu sâu về thị trường.
+    \item \textbf{Tầng 3:} Ma trận nhiệt và tương quan động hỗ trợ quản trị rủi ro bằng cách cho thấy mối liên hệ giữa các tài sản.
+\end{itemize}
+
+\subsubsection{Visual encoding và nhận thức}
+\begin{itemize}
+    \item \textbf{Độ chính xác:} Các biến định lượng quan trọng như giá và khối lượng được mã hóa bằng \textit{Vị trí trên thang đo chung}.
+    \item \textbf{Bộ lọc:} Các bộ lọc được đặt sát biểu đồ tương ứng và sử dụng chung một bộ màu Bull/Bear cho toàn bộ Dashboard. Điều này giúp giảm đáng kể "Tải trọng nhận thức", giúp trader ra quyết định nhanh trong môi trường biến động cao.
+    \item \textbf{Sự phân bậc thị giác:} Sử dụng kích thước biểu đồ lớn hơn cho các thành phần quan trọng (Nến giá) và màu sắc rực rỡ (accent) cho các tín hiệu thanh lý, OI.
+\end{itemize}
+
+\subsubsection{Lý thuyết màu sắc và UI/UX}
+\begin{itemize}
+    \item \textbf{Màu sắc:} Thiết kế sử dụng nền tối (\textit{Dark Mode}) với các màu neon tương phản cao, giảm chói mắt.
+    \item \textbf{Tương tác:} Đồng bộ \textit{cross-hair} và \textit{tooltip} cung cấp dữ liệu chi tiết tại từng điểm mà không làm rối giao diện chung
+\end{itemize}
+
+\subsubsection{Kết luận}
+Dashboard đã hoàn thành mục tiêu đề ra: giúp các trader và nhà phân tích không chỉ "thấy" dữ liệu mà còn "hiểu" được bản chất của thị trường, kết hợp trực quan hóa đã tạo ra một công cụ phân tích mạnh mẽ.
