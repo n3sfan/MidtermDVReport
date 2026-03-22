@@ -1,10 +1,58 @@
 \section{Các câu hỏi phân tích}
 Nhóm đề xuất các câu hỏi phân tích sau:
 
+
 \begin{itemize}
-    \item \textbf{Câu hỏi 1:} Trong giai đoạn trên, xu hướng giá ETH biến động như thế nào so với các đường trung bình trượt giá đóng 7 cây nến?
-    \item \textbf{Câu hỏi 2:} Mức độ tương quan giữa biến động giá của các coin diễn ra như thế nào trong các giai đoạn thị trường hưng phấn hoặc hoảng loạn?
-    \item \textbf{Câu hỏi 3:} Tại các thời điểm xuất hiện "nến đỏ dài" (giá giảm mạnh trong thời gian ngắn), hợp đồng mở và khối lượng thanh lý thay đổi như thế nào? Có phải áp lực thanh lý lệnh "Long" là nguyên nhân chính dẫn đến đà giảm sâu?
-    \item \textbf{Câu hỏi 4:} Khối lượng thanh lý, hợp đồng mở theo thời gian như thế nào trong một "ngày sập giá", theo dõi?
-    \item \textbf{Câu hỏi 5:} Liệu có thể \textbf{dự đoán} các "trạng thái thị trường" hưng phấn, hoảng loạn (sập giá) dựa trên sự kết hợp giữa mất cân bằng thanh lý (khối lượng thanh lý lệnh Long $\gg$ Short hoặc ngược lại), tăng/giảm đột biến của hợp đồng mở, giá trong dữ liệu trên?
+    \item \textbf{Câu hỏi 1:} Trong trong giai đoạn từ 1/1 đến 3/3/2024, xu hướng giá ETH biến động như thế nào so với trung bình động 7 nến của giá đóng cửa các ngày trước, các sự kiện xảy ra khi giá nằm trên/dưới MA-7 so với 1 % giá nến đóng trong 1 ngày là gì?
+    \item \textbf{Câu hỏi 2:} Sự tương quan về biến động giá giữa các đồng coin (ETH, SOL, DOGE) diễn ra như thế nào trong những giai đoạn thị trường hưng phấn (giá và OI tăng trong 1 tuần) hoặc hoảng loạn (giá và OI giảm trong (1 tuần)) trong trong giai đoạn từ 1/1 đến 3/3?
+    \item \textbf{Câu hỏi 3:} Tại những thời điểm xuất hiện nến đỏ dài (giá giảm mạnh >= 4% trong cây nến 4h), Open Interest và khối lượng thanh lý thay đổi như thế nào, nguyên nhân có phải do khối lượng thanh lý Long lớn hơn 100K  trong trong giai đoạn từ 1/1 đến 31/1?
+    \item \textbf{Câu hỏi 4:} Trong 01/2024 - đầu tháng 3/2024, ở các coin khối lượng giao dịch tập trung cao nhất ở các mức giá nào đối với coin ETH, SOL và cho biết mức giá mà xảy ra 70% khối lượng giao dịch?
+    \item \textbf{Câu hỏi 5:} Trong trong giai đoạn từ 1/1 đến 31/1, qua các ngày khối lượng giao dịch (lấy trong dữ liệu nến) coin có tương quan với OI không trong 1 tuần, và tuần có khối lượng tăng mạnh > 50M và OI giảm nhẹ > 5%, và sang tuần tiếp theo ngược lại (khối lượng giảm mạnh, OI tăng nhẹ). Như vậy OI có phản ánh đúng khối lượng giao dịch không?
 \end{itemize}
+
+\subsection{Trả lời câu hỏi}
+\subsubsection{Câu 1}
+Trong giai đoạn từ 1/1 đến 3/3/2024, giá ETH dao động trong khoảng 2.100 - 3.500 USD. Xu hướng chung là tăng dần từ đầu tháng 1 và đạt đỉnh trên 3.500 USD vào đầu tháng 3.
+
+So sánh với đường trung bình động 7 ngày (MA-7):
+\begin{itemize}
+    \item \textbf{Giá nằm trên MA-7:} Cho thấy xu hướng ngắn hạn đang tăng. Khi giá cao hơn MA-7 từ 1-2\%, đà tăng thường rất mạnh do người mua chiếm ưu thế. Các sự kiện đi kèm bao gồm Open Interest tăng mạnh (ví dụ ngày 10/1 và 12/1) và các đợt thanh lý lệnh Short (ngày 10-11/1), đẩy giá tiếp tục đi lên.
+    \item \textbf{Giá nằm dưới MA-7:} Cho thấy xu hướng ngắn hạn đang giảm. Các đợt sụt giảm thường đi kèm với việc thanh lý lệnh Long và sụt giảm Open Interest.
+\end{itemize}
+
+\subsubsection{Câu 2}
+Sự tương quan về biến động giá giữa ETH, SOL và DOGE trong giai đoạn 1/1 đến 3/3/2024 được thể hiện qua hai trạng thái thị trường:
+\begin{itemize}
+    \item \textbf{Giai đoạn hưng phấn (26/02 - 03/03):} Thị trường tăng trưởng mạnh, giá và Open Interest của ETH và SOL tăng đồng bộ. Hệ số tương quan động giữa ETH và SOL duy trì ở mức cao (0.6 - 0.75). Tuy nhiên, DOGE có hiện tượng tách rời khi giá tăng vọt nhưng Open Interest lại giảm, dẫn đến tương quan với ETH/SOL giảm xuống chỉ còn 0.3 - 0.48. Điều này cho thấy dòng tiền tập trung cục bộ vào memecoin này.
+    \item \textbf{Giai đoạn hoảng loạn (20/01 - 23/01):} Khi thị trường điều chỉnh giảm, mức độ tương quan giữa cả ba đồng coin tăng cao (trên 0.5) và có xu hướng hội tụ. Điều này phản ánh tâm lý tháo chạy chung của thị trường khiến các tài sản biến động cùng chiều rõ rệt hơn so với điều kiện bình thường.
+\end{itemize}
+
+\subsubsection{Câu 3}
+Tại các thời điểm xuất hiện nến đỏ dài (giá giảm mạnh trong khung 4h), dữ liệu cho thấy:
+\begin{itemize}
+    \item \textbf{Open Interest:} Thường có xu hướng tăng nhẹ (từ 0.4\% đến 6.3\%), cho thấy các nhà giao dịch vẫn tiếp tục mở vị thế mới ngay cả khi giá đang giảm.
+    \item \textbf{Khối lượng thanh lý:} Khối lượng thanh lý lệnh Long tăng vọt và lớn hơn rất nhiều so với lệnh Short. Cụ thể, các đợt giảm mạnh đều có khối lượng thanh lý Long vượt xa mốc 100K USD, thậm chí lên đến hàng trăm triệu USD (như đợt ngày 23/01 với ETH).
+\end{itemize}
+Nguyên nhân giá giảm sâu chính là do hiệu ứng thanh lý dây chuyền: giá giảm mạnh khiến các vị thế Long bị thanh lý, tạo áp lực bán tháo tự động đẩy giá tiếp tục sụt giảm nghiêm trọng hơn.
+
+\subsubsection{Câu 4}
+Dựa trên biểu đồ phân bổ khối lượng theo giá từ tháng 1 đến đầu tháng 3/2024, khối lượng giao dịch tập trung tại các vùng giá sau:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Chỉ số} & \textbf{ETH} & \textbf{SOL} \\ \hline
+Vùng POC & 2.931 USD & 100.7 USD \\ \hline
+Vùng Value Area 70\% & 2.201 - 3.428 USD & 93.6 - 129.1 USD \\ \hline
+Khoảng giá toàn giai đoạn & 2.172 - 3.516 USD & 79.39 - 137.79 USD \\ \hline
+\end{tabular}
+\end{table}
+Đối với ETH, khối lượng tập trung nhiều ở vùng dưới POC, cho thấy áp lực thanh lý Long hoặc xu hướng tích lũy trước khi tăng mạnh. Ngược lại, SOL có khối lượng phân bố đều hơn quanh POC, phản ánh trạng thái giá cân bằng hơn.
+
+\subsubsection{Câu 5}
+Qua phân tích dữ liệu, Open Interest hầu như \textbf{không} phản ánh đúng khối lượng giao dịch thực tế theo thời gian.
+\begin{itemize}
+    \item Ví dụ điển hình từ tuần 1 sang tuần 2 tháng 1: Khối lượng giao dịch ETH tăng mạnh nhưng Open Interest lại giảm 13\%. Từ tuần 2 sang tuần 3, khối lượng giảm mạnh nhưng Open Interest lại tăng 6.6\%.
+\end{itemize}
+Sự sai lệch này là do Open Interest chỉ phản ánh số lượng hợp đồng đang mở (vị thế chưa đóng), trong khi khối lượng giao dịch phản ánh tổng lượng mua bán trong ngày. Một nhà giao dịch có thể đóng và mở lệnh nhiều lần trong ngày (tạo ra khối lượng lớn) mà không làm thay đổi đáng kể chỉ số này. Do đó, Open Interest chỉ nên được dùng để đánh giá dòng tiền mới gia nhập hoặc rời bỏ thị trường.
+
